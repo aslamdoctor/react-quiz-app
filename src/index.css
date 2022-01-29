@@ -1,13 +1,75 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	font-family: 'Karla', sans-serif;
+	margin: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+input,
+button,
+select,
+textarea {
+	font-family: 'Karla', sans-serif;
+}
+
+.app-box {
+	width: 550px;
+	height: 550px;
+	background: #f5f7fb;
+	margin: 50px auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	overflow: hidden;
+}
+.app-box::before {
+	content: '';
+	background: url(./assets/blob1.svg) center center no-repeat;
+	display: block;
+	width: 150px;
+	height: 140px;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.app-box::after {
+	content: '';
+	background: url(./assets/blob2.svg) center center no-repeat;
+	display: block;
+	width: 150px;
+	height: 120px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.app-box .welcome {
+	text-align: center;
+}
+.app-box .welcome h1 {
+	font-weight: bold;
+	font-size: 31.25px;
+	line-height: 37px;
+	text-align: center;
+	color: #293264;
+	margin-bottom: 10px;
+}
+.app-box .welcome p {
+	font-size: 18px;
+	line-height: 19px;
+	text-align: center;
+	color: #293264;
+	margin-bottom: 30px;
+}
+.app-box .welcome button {
+	border: none;
+	padding: 0;
+	width: 193px;
+	height: 52px;
+	background: #4d5b9e;
+	border-radius: 15px;
+	color: #f5f7fb;
+	font-weight: 500;
+	font-size: 16px;
+	cursor: pointer;
 }
