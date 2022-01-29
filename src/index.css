@@ -1,8 +1,10 @@
 body {
+	font-size: 16px;
 	font-family: 'Karla', sans-serif;
 	margin: 0;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	background-color: #1c1c1c;
 }
 
 input,
@@ -12,9 +14,13 @@ textarea {
 	font-family: 'Karla', sans-serif;
 }
 
+* {
+	box-sizing: border-box;
+}
+
 .app-box {
-	width: 550px;
-	height: 550px;
+	width: 600px;
+	min-height: 600px;
 	background: #f5f7fb;
 	margin: 50px auto;
 	display: flex;
@@ -32,6 +38,7 @@ textarea {
 	position: absolute;
 	top: 0;
 	right: 0;
+	z-index: 0;
 }
 .app-box::after {
 	content: '';
@@ -42,9 +49,12 @@ textarea {
 	position: absolute;
 	bottom: 0;
 	left: 0;
+	z-index: 0;
 }
 .app-box .welcome {
 	text-align: center;
+	position: relative;
+	z-index: 1;
 }
 .app-box .welcome h1 {
 	font-weight: bold;
@@ -61,7 +71,15 @@ textarea {
 	color: #293264;
 	margin-bottom: 30px;
 }
-.app-box .welcome button {
+
+.app-box .qna-wrapper {
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	padding: 40px 75px;
+}
+
+.button {
 	border: none;
 	padding: 0;
 	width: 193px;
@@ -72,4 +90,76 @@ textarea {
 	font-weight: 500;
 	font-size: 16px;
 	cursor: pointer;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.qna {
+	padding-bottom: 15px;
+	margin-bottom: 30px;
+	border-bottom: 1px solid #dbdef0;
+}
+.qna--question {
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 19px;
+	color: #293264;
+	margin-bottom: 12px;
+}
+.qna--answers {
+}
+.qna--answers ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+}
+.qna--answers ul li {
+	margin-right: 12px;
+	margin-bottom: 12px;
+}
+.qna--answers ul li label {
+	position: relative;
+}
+.qna--answers ul li label input[type='radio'] {
+	position: absolute;
+	opacity: 0;
+}
+.qna--answers ul li label span {
+	display: block;
+	border: 1px solid #4d5b9e;
+	border-radius: 8px;
+	padding: 4px 8px;
+}
+
+.qna--answers ul li label input[type='radio']:checked + span {
+	border: 1px solid #d6dbf5;
+	background-color: #d6dbf5;
+}
+
+.qna--answers ul li label.correct span {
+	border: 1px solid #94d7a2;
+	background-color: #94d7a2;
+}
+.qna--answers ul li label.incorrect span {
+	border: 1px solid #f8bcbc;
+	background-color: #f8bcbc;
+	opacity: 0.5;
+}
+
+.score-box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.score-box span {
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 17px;
+	color: #293264;
+	margin-right: 20px;
 }
